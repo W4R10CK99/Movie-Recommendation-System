@@ -8,8 +8,29 @@ from sklearn.metrics.pairwise import cosine_similarity
 #diiflib is used to indentify given input with closest data
 import difflib
 
+st.markdown(
+    "<style>"
+    ".stApp h1 {"
+    "font-family: 'Arial', sans-serif;"
+    "font-weight: bold;"
+    "color: black;"  # Text color for the title
+    "background-color: #FFD700;"  # IMDb-like yellow background color
+    "border-radius: 10px;"  # Rounded corners
+    "padding: 10px 20px;"  # Add some padding for spacing
+    "}"
+    "</style>",
+    unsafe_allow_html=True,
+)
 
-st.title('Movie Recommender','r')
+# Apply custom CSS styles to the subtitle
+
+# Your existing code for movie recommendation
+st.title("Movie Recommender")
+st.write("")
+st.write("")
+st.write("")
+st.write("")
+
 movies_data = pd.read_csv('movies.csv')
 relevant_features = ['genres','keywords','cast','director','tagline']
 
@@ -30,7 +51,7 @@ titles_df = pd.read_csv(csv_file)
 titles = titles_df['Titles'].tolist()
 
 # Create a dropdown widget to select a movie title
-movie_name = st.selectbox("Select a movie title:", titles)
+movie_name = st.selectbox("Movie You watched :", titles)
 
 
 if movie_name != "NONE":
